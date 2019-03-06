@@ -1,8 +1,16 @@
 <script type="text/javascript">
-  var arr = new Array('seoul','new york','ladarkh','pusan', 'Tsukuba');
-  function getRandomValueFromArray(arr){
-    var index = Math.floor(arr.length*Math.random()); //floor 소수점이 있을 때 내림
-    return arr[index];
+  // var arr = new Array('seoul','new york','ladarkh','pusan', 'Tsukuba');
+  // function getRandomValueFromArray(arr){
+  //   var index = Math.floor(arr.length*Math.random()); //floor 소수점이 있을 때 내림
+  //   return arr[index];
+  // }
+  // console.log(getRandomValueFromArray(arr));
+
+  Array.prototype.random = function(){
+    var index = Math.floor(this.length*Math.random());
+    return this[index];
   }
-  console.log(getRandomValueFromArray(arr));
+  var arr = new Array('seoul','new york','ladarkh','pusan', 'Tsukuba');
+  console.log(arr.random());
+
 </script>
