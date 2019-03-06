@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var grades = {
+            'list': {'one': 10,'two':20, 'three': 40}, //list 키가 있고, 그 안에 들어가있는 건 또다른 객체, alert(grades['list']['two']);
+            'show' : function(){
+                //this 객체를 가리키는변수
+                //alret(this.list) //key값이 가리키는 객체인 저 one투쓰리덩어리
+                for(var name in this.list){
+                    document.write(name+':'+this.list[name]+"<br />");
+                }
+            //alert(grades['show']);
+            }
+        }
+        grades.show();
+    </script>
+</body>
+</html>
