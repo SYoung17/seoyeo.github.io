@@ -1,14 +1,22 @@
-var a = {'id':1};
-var b = a;
-b.id = 2;
-console.log(a.id);  // 2
-// 같은 메모리?
-// 심볼릭 링크, 바로가기, 참조
+var a = 1;
+function func(b){
+    b = 2;
+}
+func(a);
+console.log(a);
 
 
 var a = {'id':1};
-var b = a;
-// b = {'id' : 2}; //얘는 객체 자체를 생ㅇ성
-// console.log(a.id); //1
-b.id = 2; //원시데이터이므로 참조가 아니라 복제
+function func(b){
+    b = {'id':2}; // 그러나 b는 다른 객체를 새로 생성함 -2
+}
+func(a); // a랑 b랑 같은 객체를 보고 있다. 1
+console.log(a.id);  // 1
+
+
+var a = {'id':1};
+function func(b){
+    b.id = 2;
+}
+func(a);
 console.log(a.id);  // 2
