@@ -1,0 +1,31 @@
+diff a/javascript/Object.html b/javascript/Object.html	(rejected hunks)
+@@ -7,16 +7,20 @@
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+   <script type="text/javascript">
+-    //Object.keys()
+-    var arr= ["a","b","c"];
+-    console.log('Object.key(arr)',Object.keys(arr));
++    Object.prototype.contain = function(needle){
++      for(var name in this){
++        if(this[name] === needle){
++          return true;
++        }
++      }
++      return false;
++    }
+ 
+-  //Object.prototype.toString()
+-  var o = new Object();
+-  console.log('o.toString()', o.toString());
+-
+-  var a = new Array(1,2,3);
+-  console.log('a.toString()'. a.toString());
++  var o = {'name' : 'egoing', 'city':'seoul'}
++  console.log(o.contain('grapittie'));
++  var a = ['egoing', 'leezche', 'grapittie'];
++  console.log(a.contain('leezche'));
++  console.log(Object.keys(a.name));
+ 
+   </script>
+ </head>
