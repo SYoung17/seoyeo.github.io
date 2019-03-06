@@ -17,9 +17,15 @@
     }
 
     var o = {'name' : 'egoing', 'city':'seoul'}
-console.log(o.contain('grapittie'));
 var a = ['egoing', 'leezche', 'grapittie'];
-console.log(a.contain('leezche'));
+
+  for(var name in o){
+    if(o.hasOwnProperty(name)){
+      console.log(name);
+    }
+
+  }
+
   </script>
 </head>
 <body>
