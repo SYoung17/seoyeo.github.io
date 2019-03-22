@@ -8,7 +8,7 @@
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
   <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
   <!-- <script src="https://unpkg.com/vue@2.6.8/dist/vue.js"></script> -->
-
+  <script src="./js/vue_com.js"></script>
 </head>
 <body>
 <div id="app">
@@ -36,6 +36,19 @@
 <div id="app-6">
   <p>{{ message }}</p>
   <input v-model="message">
+</div>
+<div id="app-7">
+  <ol>
+    <!-- 이제 각 todo-item에 todp 객체 제공
+    동적으로 바뀔 수 있음
+    각 구성요소에 "키" 제공 -->
+    <!-- todo-item 컴포넌트의 인스턴스 -->
+    <todo-item
+      v-for="item in groceryList"
+      v-bind:todo="item"
+      v-bind:key="item.id">
+    </todo-item>
+  </ol>
 </div>
 <script src="./js/vue.js"></script>
 <script src="./js/vue1.js"></script>
